@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../assets/icone.png">
+    <title>TechMan Comum</title>
+    <header>
+        <div class="logo">
+            <img class="i" src="../assets/techman.png" alt="TechMan">
+        </div>
+        <nav>
+            <ul>
+                <li><img id="sair" onclick="sair()" src="../assets/logout_sair.png" alt="LogOut"></li>
+            </ul>
+        </nav>
+    </header>
+</head>
+
+<body onload="carregar()">
+    <div class="main">
+        <div class="lista">
+            <div class="profileTwo">
+                <div class="profile-body-section model">
+                    <div class="profile-header">
+                        <img id="imagem" src="../assets/disaster.jpg" alt="Foto">
+                        <div>
+                            <input type="text" id="id" value="1"/>
+                            <h2 id="equipamento"></h2>
+                            <p id="descricao"></p>
+                            <div class="contain">
+                                <div class="btn-btn" id="coment">
+                                    <img onclick="openModal(id.value)" width="32" src="../assets/comentario.png" alt="Alterar">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------Cadastro----------------------------- -->
+    <div id="modal1" class="modal">
+        <div id="novo">
+            <div class="modalHeader">
+                <h3>Cadastro de equipamento</h3>
+                <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
+            </div>
+            <div class="modalForm">
+                <input type="hidden" id="idc" />
+                <label class="lab1" for="">Nome Completo:</label>
+                <input type="text" id="nomec" />
+                <label class="lab2" for="">Proposta:</label>
+                <textarea name="" id="propostac" cols="20" rows="3"></textarea>
+            </div>
+            <div class="modalFooter">
+                <button class="enviar-proposta" data-profissional-id="123">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div id="alerta">
+            <div class="modalHeader">
+                <h3>Mensagem</h3>
+                <button onclick="modal2.setAttribute('style','display:none')">X</button>
+            </div>
+            <div id="msg"></div>
+        </div>
+    </div>
+
+    <!-- ---------------------- Comentario ---------------------------------------- -->
+
+    <div id="Mymodal" class="modamdm">
+
+        <div class="modal-contentt">
+            <span class="close">&times;</span>
+            <p class="p">Comentários</p>
+            <div id="listarEq"></div>
+            <button id="cmd">Criar Comentario</button>
+        </div>
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
